@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Install phase: installing dependencies"
+  pre_build:
+    commands:
+      - echo "Pre-build phase: running setup"
+      - mkdir build
+  build:
+    commands:
+      - echo "Build phase: compiling the application"
+      - cat template.txt | ./build.sh > build/$(datetime '+%s').txt
+  post_build:
+    commands:
+      - echo "Post-build phase: finishing up"
+
+artifacts:
+  files:
+    - build/*
+  base-directory: build
