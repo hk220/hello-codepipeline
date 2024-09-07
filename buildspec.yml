@@ -11,7 +11,7 @@ phases:
   build:
     commands:
       - echo [Build phase:] compiling the application
-      - cat template.txt | ./build.sh > build/$(date '+%s').txt
+      - cat template.txt | ./build.sh > build/datetime.txt
   post_build:
     commands:
       - echo [Post-build phase] finishing up
